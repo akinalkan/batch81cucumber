@@ -11,8 +11,8 @@ import utilities.Driver;
 
 public class AmazonStepDefinition {
     AmazonPage amazonPage=new AmazonPage();
-    @Given("kullanici amazon anasayfasinda")
-    public void kullaniciAmazonAnasayfasinda() {
+    @Given("kullanici amazon sayfasina gider")
+    public void kullaniciAmazonSayfasinaGider() {
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
     }
 
@@ -25,7 +25,6 @@ public class AmazonStepDefinition {
     public void sonuclarinNutellaIcerdiginiTestEder() {
         String arananKelime="Nutella";
         String actualAramaSonucStr= amazonPage.aramaSonucElementi.getText();
-
         Assert.assertTrue(actualAramaSonucStr.contains(arananKelime));
     }
 
@@ -33,6 +32,7 @@ public class AmazonStepDefinition {
     public void sayfayiKapatir() {
         Driver.closeDriver();
     }
+
 
     @Then("kullanici Selenium icin arama yapar")
     public void kullaniciSeleniumIcinAramaYapar() {

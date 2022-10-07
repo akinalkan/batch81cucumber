@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        tags = "@All",
-        dryRun = false
+        tags = "@Background",//2 tagi ayni anada calistirmak isterseniz "@gp1 or @gp2" seklinde yazariz
+        dryRun = true
 )
 
 
@@ -20,7 +20,7 @@ Runner Class'i TestNG'deki XML mantigi ile calisir
 Calistirmak istedigimiz senaryolari tag belirtiriz
 ve belirttigimiz taglari calistirir XML'deki gibi istedigimiz testleri calitrimak icin kullaniriz
 Runner Class body'si bostur ve Runner Class'ini ekleyecegimiz notasyonlar aktive eder
-Bu class'da kullanacagimiz 2 adeet notasyon vardir
+Bu class'da kullanacagimiz 2 adet notasyon vardir
 1-@RunWith(Cucumber.class)  notasyonu Runner Class'ina calisma ozelligi ekler,
 Bu notasyon oldugu icin Cucumber frameworkumuz de Junit kullanmayi tercih ederiz
 
@@ -34,4 +34,8 @@ dryRun: 2 secenek vardir
 a-)dryRun=true --> dersek testimizi calistirmadan eksik adimlari bize verir
 b-)dryRun=false-->Testlerimizi drive ile calistirir
  */
+
+
+
+
 }
