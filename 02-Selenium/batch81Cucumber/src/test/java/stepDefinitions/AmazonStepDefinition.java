@@ -33,4 +33,17 @@ public class AmazonStepDefinition {
     public void sayfayiKapatir() {
         Driver.closeDriver();
     }
+
+    @Then("kullanici Selenium icin arama yapar")
+    public void kullaniciSeleniumIcinAramaYapar() {
+        amazonPage.aramaKutusu.sendKeys("Selenium" + Keys.ENTER);
+    }
+
+    @And("sonuclarin Selenium icerdigini test eder")
+    public void sonuclarinSeleniumIcerdiginiTestEder() {
+        String arananKelime="Selenium";
+        String actualAramaSonucStr= amazonPage.aramaSonucElementi.getText();
+
+        Assert.assertTrue(actualAramaSonucStr.contains(arananKelime));
+    }
 }
